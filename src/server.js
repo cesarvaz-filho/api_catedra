@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
-
+const port = process.env.PORT || 3333;
 const app = express();
 
 app.use(cors())
@@ -21,4 +21,4 @@ app.use((error, request, response, next) => {
   response.json({ error: error.message });
 });
 
-app.listen(3333, () => console.log("Server is running on port 3333"));
+app.listen(port, () => console.log("Server is running on port ", port));
